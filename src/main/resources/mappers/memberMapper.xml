@@ -6,4 +6,14 @@
   
 <mapper namespace="com.itwillbs.mapper.MemberMapper">
 
+	<!-- 회원가입 --> 
+ 	<insert id="insertMember">
+ 		insert into MEMBER (member_idx,member_id,member_name,member_email,member_pw,member_phone
+ 							member_nick,member_address)
+ 		values(#{member_idx},#{member_id},#{member_name},#{member_email},#{member_pw},#{member_phone}
+ 				#{member_nick},#{member_address})
+ 	
+ 	</insert> 
+
+
 </mapper> 
