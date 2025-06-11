@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         https://www.springframework.org/schema/context/spring-context.xsd">
+
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
 	<!-- hikariConfig : hikariCP의 설정정보를 저장하는 객체 -->
@@ -49,11 +54,14 @@
 	<bean id = "sqlSession"
 	      class = "org.mybatis.spring.SqlSessionTemplate" 
 	      destroy-method="close" >
-		  <constructor-arg name="sqlSessionFactory" 
-		                    ref="sqlSessionFactory"/>						
+		<constructor-arg ref="sqlSessionFactory"/>
 	
 	</bean>
-		
+
+	<!-- 어노테이션 기반 클래스 자동 스캔 -->
+	<context:component-scan base-package="com.itwillbs"/>
+
+
 	<!-- sqlSession : 
 		 디비 연결(자동,자원해제), SQL 실행, Mybatis 설정, mapper 설정 -->
 	
