@@ -6,6 +6,12 @@
   
 <mapper namespace="com.itwillbs.mapper.MemberMapper">
 
+	<!-- 서버시간 정보를 조회 --> 	
+ 
+ 	<select id="getServerTime" resultType="string">
+ 	  select now()
+ 	</select>
+
 	<!-- 회원가입 --> 
  	<insert id="insertMember">
  		insert into MEMBER (member_idx,member_id,member_name,member_email,member_pw,member_phone
