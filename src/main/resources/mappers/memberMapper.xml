@@ -14,9 +14,9 @@
 
 	<!-- 회원가입 --> 
  	<insert id="insertMember">
- 		insert into MEMBER (member_idx,member_id,member_name,member_email,member_pw,member_phone
+ 		insert into member(member_id,member_name,member_email,member_pw,member_phone
  							member_nick,member_address)
- 		values(#{member_idx},#{member_id},#{member_name},#{member_email},#{member_pw},#{member_phone}
+ 		values(#{member_id},#{member_name},#{member_email},#{member_pw},#{member_phone}
  				#{member_nick},#{member_address})
  	
  	</insert> 
