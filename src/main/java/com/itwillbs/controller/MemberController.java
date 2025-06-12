@@ -38,8 +38,6 @@ public class MemberController {
 				
 				model.addAttribute("time", time);
 				
-				logger.info(" /views/serverTime.jsp 페이지 출력 ");
-				
 			}
 			
 			// http://localhost:8088/member/join
@@ -64,4 +62,6 @@ public class MemberController {
 				return "redirect:/member/join";
 				
 			}
-}
+			
+			
+} //MemberController 끝
